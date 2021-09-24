@@ -355,18 +355,4 @@ export const getInvalidIssueStatusComment = (
   /** Threshold of additions allowed. */
   allowedStatuses: string
 ): string =>
-  `<p>:broken_heart: The detected issue is not in one of the allowed statuses :broken_heart: </p>    
-   <table>
-     <tr>
-        <th>Detected Status</th>
-        <td>${issueStatus}</td>
-        <td>:x:</td>
-     </tr>
-     <tr>
-        <th>Allowed Statuses</th>
-        <td>${allowedStatuses}</td>
-        <td>:heavy_check_mark:</td>
-      </tr>
-   </table>
-   <p>Please ensure your jira story is in one of the allowed statuses</p>
-  `;
+  `:warning: **The Jira issue isn't ready for the PR to be merged yet.** Its current status is "${issueStatus}". Once it has been tested by QA and product, re-run this check.`;
